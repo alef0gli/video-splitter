@@ -1,7 +1,7 @@
 import os
 from moviepy.video.io.VideoFileClip import VideoFileClip
 
-def split_video(file_path, max_size_gb=50):
+def split_video(file_path, max_size_gb=48):
     try:
         video = VideoFileClip(file_path)
         duration = video.duration
@@ -41,7 +41,7 @@ def split_video(file_path, max_size_gb=50):
     except Exception as e:
         print(f"Error splitting video {file_path}: {e}")
 
-def check_videos_in_directory(directory, max_size_gb=50):
+def check_videos_in_directory(directory, max_size_gb=48):
     for root, dirs, files in os.walk(directory):
         for file in files:
             file_path = os.path.join(root, file)
